@@ -28,6 +28,7 @@ class Inputfield extends StatelessWidget {
           right: mediaquerywidth(0.01, context),
           top: mediaqueryheight(0.02, context)),
       child: TextFormField(
+        style: TextStyle(color: Colors.white),
         autovalidateMode: AutovalidateMode.onUserInteraction,
         controller: controller,
         validator: validator,
