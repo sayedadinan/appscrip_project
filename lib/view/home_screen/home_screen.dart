@@ -11,11 +11,11 @@ class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  HomeScreenState createState() => HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  TextEditingController _searchController = TextEditingController();
+class HomeScreenState extends State<HomeScreen> {
+  TextEditingController searchController = TextEditingController();
 
   @override
   void initState() {
@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Inputfield(
-                    controller: _searchController,
+                    controller: searchController,
                     onChanged: (value) {
                       Provider.of<UserViewModel>(context, listen: false)
                           .searchQuery = value;
@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
-    _searchController.dispose();
+    searchController.dispose();
     super.dispose();
   }
 }
